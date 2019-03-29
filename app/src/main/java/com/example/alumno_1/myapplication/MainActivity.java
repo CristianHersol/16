@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imgInicio = (ImageView) findViewById(R.id.imgInicio);
         btnNext = (Button) findViewById(R.id.btnNext);
         rdbgSexo = (RadioGroup) findViewById(R.id.rdbgSexo);
+        rdbOpc1 = (RadioButton) findViewById(R.id.rdbOpc1);
 
         imgInicio.setOnClickListener(this);
 
@@ -112,19 +113,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         intent.putExtra("Nombre", txteNombre.getText().toString());
         startActivity(intent);
-
         intent.putExtra("Nacimiento", txtnEdad.getText().toString());
         startActivity(intent);
 
-
-
-        String sexo;
-
+        String sexo = "";
         if(rdbOpc1.isChecked()){
             sexo = "Masculino";
         }else if(rdbOpc2.isChecked()){
             sexo = "Femenino";
         }
+
+        intent.putExtra("Sexo", sexo);
+        startActivity(intent);
 
     }
 

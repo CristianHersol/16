@@ -13,18 +13,21 @@ public class Informacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informacion);
 
-        final TextView txtNombre, txtEdad;
+        final TextView txtNombre, txtEdad, txtSexo, txtPasatiempo, txtMascota;
 
         txtNombre = (TextView) findViewById(R.id.txtNombre);
         txtEdad = (TextView) findViewById(R.id.txtEdad);
+        txtSexo = (TextView) findViewById(R.id.txtSexo);
 
         Bundle recibirinfo = getIntent().getExtras();
 
         String nombreImp = recibirinfo.getString("Nombre");
         String edadImp = recibirinfo.getString("Nacimiento");
+        String sexoImp = recibirinfo.getString("Sexo");
 
         txtNombre.setText(nombreImp);
         txtEdad.setText(edadImp);
+        txtSexo.setText(sexoImp);
 
     }
 }
