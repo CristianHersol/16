@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Informacion" />
-        <activity android:name=".acercade"></activity>
     </application>
 
 </manifest>

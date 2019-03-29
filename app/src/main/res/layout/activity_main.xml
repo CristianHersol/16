@@ -30,42 +30,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/chkOpc1"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="175dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txteNombre"
+        app:layout_constraintVertical_bias="0.493">
+
+        <TableRow>
+
+            <TextView android:text="PASATIEMPOS" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/chkOpc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Videojuegos"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="142dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/chkOpc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escuchar Musica"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="181dp" />
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Videojuegos"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="142dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/txtnEdad">
 
-    <CheckBox
-        android:id="@+id/chkOpc2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escuchar Musica"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="181dp" />
+        <TableRow>
 
-    <RadioGroup
-        android:id="@+id/rdbgSexo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="141dp">
+            <TextView android:text="SEXO" />
+        </TableRow>
 
-        <RadioButton
-            android:id="@+id/rdbOpc1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Femenino" />
+        <TableRow>
 
-        <RadioButton
-            android:id="@+id/rdbOpc2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Masculino" />
+            <RadioGroup
+                android:id="@+id/rdbgSexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtnEdad"
+                app:layout_constraintVertical_bias="0.486">
 
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rdbOpc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Femenino" />
+
+                <RadioButton
+                    android:id="@+id/rdbOpc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino" />
+
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
 
 
     <EditText
@@ -87,14 +138,20 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"/>
 
     <ListView
         android:id="@+id/lstOpciones"
-        android:layout_width="180dp"
-        android:layout_height="54dp"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="351dp" />
+        android:layout_width="172dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/spnMascotas"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <ImageView
         android:id="@+id/imgInicio"
@@ -114,13 +171,17 @@
         android:layout_width="117dp"
         android:layout_height="67dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="52dp"
+        android:onClick="next"
         android:text="NEXT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
-        app:layout_constraintStart_toEndOf="@+id/imgInicio" />
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toEndOf="@+id/imgInicio"
+        app:layout_constraintTop_toBottomOf="@+id/lstOpciones"
+        app:layout_constraintVertical_bias="0.905" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
