@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnNext = (Button) findViewById(R.id.btnNext);
         rdbgSexo = (RadioGroup) findViewById(R.id.rdbgSexo);
         rdbOpc1 = (RadioButton) findViewById(R.id.rdbOpc1);
+        rdbOpc2 = (RadioButton) findViewById(R.id.rdbOpc2);
 
         imgInicio.setOnClickListener(this);
 
